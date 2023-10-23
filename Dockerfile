@@ -11,7 +11,7 @@ RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata # 타임존 미리 설정
 RUN apt-get -y update
-RUN apt-get install -y gedit
+#RUN apt-get install -y gedit
 RUN apt-get install -y vim
 RUN apt-get install -y sudo
 RUN apt-get install -y git
