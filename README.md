@@ -7,6 +7,6 @@ rosdep install --from-paths src --ignore-src -y
 
 source devel/setup.bash
 
-catkin_make
+```catkin_make```
 
 ```roslaunch ur5e_robotiq_moveit demo.launch```
