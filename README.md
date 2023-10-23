@@ -1,5 +1,6 @@
 # task_planning
-'''git clone -b maset https://github.com/KimSeungJun21/task_planning.git``` 
+```git clone -b maset https://github.com/KimSeungJun21/task_planning.git``` 
+
 ```docker build --tag nvidia_ros:latest .```
 
 ```docker run --name ros -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v /home/starry/Workspace/ksjj_ws:/workspace --gpus all nvidia_ros /bin/bash```
