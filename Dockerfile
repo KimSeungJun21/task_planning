@@ -22,13 +22,7 @@ RUN apt-get install -y libgl1-mesa-glx
 RUN apt-get install -y libglib2.0-0
 RUN apt-get install -y tesseract-ocr tesseract-ocr-kor
 RUN apt-get install -y x11-apps
-#ENV PATH="/root/miniconda3/bin:${PATH}"
-#ARG PATH="/root/miniconda3/bin:${PATH}"
-#RUN wget \
-#    https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-#    && mkdir /root/.conda \
-#    && bash Miniconda3-latest-Linux-x86_64.sh -b \
-#    && rm -f Miniconda3-latest-Linux-x86_64.sh
+
 # Install conda
 #RUN conda init bash
 #SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
@@ -52,22 +46,11 @@ RUN sudo rosdep init
 RUN rosdep update
 RUN sudo apt-get update
 RUN sudo apt-get install -y software-properties-common
-RUN sudo apt-get install -y ros-noetic-moveit-setup-assistant
-RUN sudo apt-get install -y ros-noetic-moveit-core ros-noetic-moveit-ros-planning ros-noetic-moveit-ros-planning-interface ros-noetic-moveit-ros-robot-interaction
-RUN sudo apt-get update && sudo apt-get install -y ros-noetic-moveit-visual-tools
-RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-interface
-RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-state-controller
-RUN sudo apt-get install -y ros-noetic-ur-msgs
+
 #RUN mkdir workspace
 WORKDIR /workspace
 RUN mkdir src
 # Set up ROS environment and install rosdep
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
-RUN sudo apt-get update && sudo apt-get install -y ros-noetic-rviz-visual-tools
-RUN sudo apt-get install -y ros-noetic-moveit-fake-controller-manager ros-noetic-moveit-planners ros-noetic-moveit-simple-controller-manager \
-    && sudo apt-get install -y ros-noetic-position-controllers \
-    && sudo apt-get install -y ros-noetic-joint-trajectory-controller
-RUN sudo apt-get update && sudo apt-get install -y ros-noetic-scaled-joint-trajectory-controller
-RUN sudo apt-get update && sudo apt-get install -y ros-noetic-industrial-robot-status-interface
 RUN rosdep install -y --from-paths /workspace/src/
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
