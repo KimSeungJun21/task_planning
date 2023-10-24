@@ -8,5 +8,8 @@
 
 ```cd test_pybullet```
 
-```python3 main.py```
-
+if you want example
+<stacking example>
+```python3 stacking.py```
+<clustering example>
+```python3 clustering.py```
