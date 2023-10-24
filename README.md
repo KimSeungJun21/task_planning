@@ -10,10 +10,10 @@
 
 if you want example
 
-<stacking example>
+stacking example
   
 ```python3 stacking.py```
 
-<clustering example>
+clustering example
 
 ```python3 clustering.py```
