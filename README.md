@@ -9,6 +9,7 @@
 ```cd test_pybullet```
 
 if you want example
+
 <stacking example>
 ```python3 stacking.py```
 <clustering example>
