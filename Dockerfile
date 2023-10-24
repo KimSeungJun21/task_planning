@@ -11,7 +11,11 @@ RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata # 타임존 미리 설정
 RUN apt-get -y update
+<<<<<<< HEAD
 #RUN apt-get install -y gedit 
+=======
+#RUN apt-get install -y gedit
+>>>>>>> da74a3b03c65c37fc4c8603c8c92106f90c8c6b5
 RUN apt-get install -y vim
 RUN apt-get install -y sudo
 RUN apt-get install -y git
@@ -22,13 +26,7 @@ RUN apt-get install -y libgl1-mesa-glx
 RUN apt-get install -y libglib2.0-0
 RUN apt-get install -y tesseract-ocr tesseract-ocr-kor
 RUN apt-get install -y x11-apps
-#ENV PATH="/root/miniconda3/bin:${PATH}"
-#ARG PATH="/root/miniconda3/bin:${PATH}"
-#RUN wget \
-#    https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-#    && mkdir /root/.conda \
-#    && bash Miniconda3-latest-Linux-x86_64.sh -b \
-#    && rm -f Miniconda3-latest-Linux-x86_64.sh
+
 # Install conda
 #RUN conda init bash
 #SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
@@ -38,6 +36,7 @@ RUN sudo apt install -y python3-pip
 RUN pip install numpy
 RUN pip install pybullet
 # Install ROS
+<<<<<<< HEAD
 #RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 #RUN sudo apt-get install -y curl 
 #RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
@@ -58,10 +57,28 @@ RUN pip install pybullet
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-interface
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-state-controller
 #RUN sudo apt-get install -y ros-noetic-ur-msgs
+=======
+RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+RUN sudo apt install -y curl 
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+RUN sudo apt update
+RUN sudo apt install -y ros-noetic-desktop-full
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash"
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+RUN /bin/bash -c "source ~/.bashrc"
+RUN sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+RUN sudo apt install -y python3-rosdep
+RUN sudo rosdep init
+RUN rosdep update
+RUN sudo apt-get update
+RUN sudo apt-get install -y software-properties-common
+
+>>>>>>> da74a3b03c65c37fc4c8603c8c92106f90c8c6b5
 #RUN mkdir workspace
 WORKDIR /workspace
 RUN mkdir src
 # Set up ROS environment and install rosdep
+<<<<<<< HEAD
 #RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-rviz-visual-tools
 #RUN sudo apt-get install -y ros-noetic-moveit-fake-controller-manager ros-noetic-moveit-planners ros-noetic-moveit-simple-controller-manager \
@@ -71,3 +88,8 @@ RUN mkdir src
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-industrial-robot-status-interface
 #RUN rosdep install -y --from-paths /workspace/src/
 #RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
+=======
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
+RUN rosdep install -y --from-paths /workspace/src/
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
+>>>>>>> da74a3b03c65c37fc4c8603c8c92106f90c8c6b5
