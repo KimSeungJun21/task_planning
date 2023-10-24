@@ -153,15 +153,15 @@ def stack(action,i):
 def gripper_state_control(j,i):
     global gripper_state
     if j==1 and gripper_state==None:
-        gripper_state=p.createConstraint(robotID, p.getJointInfo(robotID,7)[0], object_ids[i], -1, p.JOINT_FIXED, [0, 0, 0], [0, 0, 0], [-0.15, 0, 0])
+        gripper_state=p.createConstraint(robotID, p.getJointInfo(robotID,7)[0], object_ids[i], -1, p.JOINT_FIXED, [0, 0, 0], [0, 0, 0], [-0.1438, 0, 0])
     elif j==0 and gripper_state!=None:
         p.removeConstraint(gripper_state)
         gripper_state=None
 
 def gripper_close(action,range,i):
-    action[-1]=range
-    time.sleep(0.1)
     gripper_state_control(1,i)
+    time.sleep(0.1)
+    action[-1]=range
     return action 
 
 def gripper_open(action,i):        
@@ -174,23 +174,23 @@ action=[0,-0.5,1,0,1.57,1.57,0.085]
 
 j=1
 for i in range(10000):
-    print('i',i)
+    #print('i',i)
     step(action,'end')
-    if i>=10 +85*(j-1) and i <= 30+85*(j-1):
+    if i>=10 +75*(j-1) and i <= 30+85*(j-1):
         pre_grasp_pose(action,j)
-    elif i>=30+85*(j-1) and i<= 40+85*(j-1):
+    elif i>=20+75*(j-1) and i<= 40+85*(j-1):
         move_box(action,j)
-    elif i>=40+85*(j-1) and i<= 45+85*(j-1):
+    elif i>=30+75*(j-1) and i<= 45+85*(j-1):
         gripper_close(action,0.06,j)
-    elif i>=45+85*(j-1) and i<= 50+85*(j-1):
+    elif i>=40+75*(j-1) and i<= 50+85*(j-1):
         move_xyz(action,'z',1)
-    elif i>=50+85*(j-1) and i<= 70+85*(j-1):
+    elif i>=50+75*(j-1) and i<= 70+85*(j-1):
         pre_grasp_pose(action,j-1)
-    elif i>=70+85*(j-1) and i<= 75+85*(j-1):
+    elif i>=60+75*(j-1) and i<= 75+85*(j-1):
         stack(action,j-1)
-    elif i>=75+85*(j-1) and i<= 80+85*(j-1):
+    elif i>=70+75*(j-1) and i<= 80+85*(j-1):
         gripper_open(action,j)   ##placed box
-    elif i>=80+85*(j-1) and i<= 85+85*(j-1):
+    elif i>=75+75*(j-1) and i<= 85+85*(j-1):
         pre_grasp_pose(action,j)
         j+=1
     if j==5:
