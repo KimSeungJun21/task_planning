@@ -3,6 +3,9 @@
 
 ```cd task_planning```
 
+```xhost +```
+
+
 ```sudo docker build --tag nvidia_ros:latest .```
 
 # Installing nvidia-container-toolkit 
