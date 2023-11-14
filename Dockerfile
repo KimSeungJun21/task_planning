@@ -6,10 +6,16 @@ RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.6.2/lib64${LD_LIBRARY_PATH:+
 RUN echo 'export PATH=/usr/local/cuda/bin:/$PATH' >> ~/.bashrc
 RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 RUN apt-get -y update
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    vim \
+    apt-utils \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update && \
     apt-get install -y tzdata && \
     ln -fs /usr/share/zoneinfo/Asia/Seoul /etc/localtime && \
-    dpkg-reconfigure -f noninteractive tzdata # 타임존 미리 설정
+    dpkg-reconfigure -f noninteractive tzdata 
+# 타임존 미리 설정
 RUN apt-get -y update
 #RUN apt-get install -y gedit 
 #RUN apt-get install -y gedit
