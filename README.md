@@ -9,7 +9,7 @@
 
 ```cd test_pybullet```
 
-If you want run examples:
+If you want to run examples:
 
 1) Stacking example
   
