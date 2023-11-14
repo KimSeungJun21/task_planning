@@ -18,3 +18,5 @@ If you want to run examples:
 2) Clustering example
 
 ```python3 clustering.py```
+
+``` gpus issue =>https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0```
