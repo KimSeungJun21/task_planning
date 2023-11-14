@@ -59,18 +59,18 @@ RUN pip install pybullet
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-interface
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-state-controller
 #RUN sudo apt-get install -y ros-noetic-ur-msgs
-RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-RUN sudo apt install -y curl 
-RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-RUN sudo apt update
-RUN sudo apt install -y ros-noetic-desktop-full
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash"
-RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+#RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+#RUN sudo apt install -y curl 
+#RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+#RUN sudo apt update
+#RUN sudo apt install -y ros-noetic-desktop-full
+#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash"
+#RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 RUN /bin/bash -c "source ~/.bashrc"
-RUN sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
-RUN sudo apt install -y python3-rosdep
-RUN sudo rosdep init
-RUN rosdep update
+#RUN sudo apt install -y python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+#RUN sudo apt install -y python3-rosdep
+#RUN sudo rosdep init
+#RUN rosdep update
 RUN sudo apt-get update
 RUN sudo apt-get install -y software-properties-common
 
