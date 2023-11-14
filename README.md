@@ -1,7 +1,7 @@
 # task_planning
 ```git clone -b master https://github.com/KimSeungJun21/task_planning.git``` 
 
-```cd /task_planning```
+```cd task_planning```
 
 ```sudo docker build --tag nvidia_ros:latest .```
 
