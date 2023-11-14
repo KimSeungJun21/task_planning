@@ -90,7 +90,7 @@ RUN mkdir src
 #RUN rosdep install -y --from-paths /workspace/src/
 #RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
 
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
-RUN rosdep install -y --from-paths /workspace/src/
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
+#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
+#RUN rosdep install -y --from-paths /workspace/src/
+#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
 
