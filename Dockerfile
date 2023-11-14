@@ -12,9 +12,7 @@ RUN apt-get update && \
     dpkg-reconfigure -f noninteractive tzdata # 타임존 미리 설정
 RUN apt-get -y update
 #RUN apt-get install -y gedit 
-=======
 #RUN apt-get install -y gedit
->>>>>>> da74a3b03c65c37fc4c8603c8c92106f90c8c6b5
 RUN apt-get install -y vim
 RUN apt-get install -y sudo
 RUN apt-get install -y git
@@ -35,7 +33,6 @@ RUN sudo apt install -y python3-pip
 RUN pip install numpy
 RUN pip install pybullet
 # Install ROS
-<<<<<<< HEAD
 #RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 #RUN sudo apt-get install -y curl 
 #RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
@@ -56,7 +53,6 @@ RUN pip install pybullet
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-interface
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-speed-scaling-state-controller
 #RUN sudo apt-get install -y ros-noetic-ur-msgs
-=======
 RUN sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 RUN sudo apt install -y curl 
 RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
@@ -72,12 +68,12 @@ RUN rosdep update
 RUN sudo apt-get update
 RUN sudo apt-get install -y software-properties-common
 
->>>>>>> da74a3b03c65c37fc4c8603c8c92106f90c8c6b5
+
 #RUN mkdir workspace
 WORKDIR /workspace
 RUN mkdir src
 # Set up ROS environment and install rosdep
-<<<<<<< HEAD
+
 #RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-rviz-visual-tools
 #RUN sudo apt-get install -y ros-noetic-moveit-fake-controller-manager ros-noetic-moveit-planners ros-noetic-moveit-simple-controller-manager \
@@ -87,8 +83,8 @@ RUN mkdir src
 #RUN sudo apt-get update && sudo apt-get install -y ros-noetic-industrial-robot-status-interface
 #RUN rosdep install -y --from-paths /workspace/src/
 #RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
-=======
+
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
 RUN rosdep install -y --from-paths /workspace/src/
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
->>>>>>> da74a3b03c65c37fc4c8603c8c92106f90c8c6b5
+
