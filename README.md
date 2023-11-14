@@ -1,5 +1,5 @@
 # task_planning
-```git clone -b maset https://github.com/KimSeungJun21/task_planning.git``` 
+```git clone -b master https://github.com/KimSeungJun21/task_planning.git``` 
 
 
 ```docker build --tag nvidia_ros:latest .```
