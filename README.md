@@ -8,12 +8,12 @@
 
 ```cd test_pybullet```
 
-if you want example
+If you want run examples:
 
-stacking example
+1) Stacking example
   
 ```python3 stacking.py```
 
-clustering example
+2) Clustering example
 
 ```python3 clustering.py```
