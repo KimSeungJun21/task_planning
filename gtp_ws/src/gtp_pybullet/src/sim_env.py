@@ -444,10 +444,11 @@ if __name__ == "__main__":
                 executor.stack(pred_object)
             executor.gripper_open(pred_object)
             executor.move_xyz('z', 1)
+            executor.pose_initialize()
         else:
             print('error')
         
-        executor.pose_initialize()
+        
     print('goal_reached!')
     print(plan_sequence)
     input()
