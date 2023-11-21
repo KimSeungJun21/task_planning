@@ -401,7 +401,8 @@ if __name__ == "__main__":
     goal_reached = False
     plan_sequence = []
     while not goal_reached:
-        input("request plan...")
+        # input("request plan...")
+        print("request plan...")
 
         nf = node_feature(obj_id_dict)
         ei, ea = edge_feature(obj_id_dict)

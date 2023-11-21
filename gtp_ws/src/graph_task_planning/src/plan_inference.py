@@ -146,10 +146,58 @@ if __name__ == '__main__':
     rospy.init_node('planner_service')
 
     args = parse_default_args()
-    ## 임시 ##
-    # planning 하려는 goal task - 임의로 입력
-    # goal_task = 'stacking_5_B13542_R1'
-    goal_task = 'clustering_5_B12345_R23233'
+    # ## 임시 ##
+    # # planning 하려는 goal task - 임의로 입력
+    # # goal_task = 'stacking_5_B13542_R1'
+    # goal_task = 'clustering_5_B12345_R23233'
+
+    try:
+        task_type = input("enter the task type to plan: [stacking, clustering]\n")
+        if (task_type != 'stacking') and (task_type != 'clustering'):
+            raise ValueError
+    except:
+        print("task type should be stacking or clustering")
+    
+    if task_type == 'stacking':
+        try:
+            region_list = '1'
+            box_order = input("enter the order of boxes to stack: [permutation of 1~5]\n")
+            
+            if len(box_order) != 5:
+                raise ValueError
+
+            for box_id in box_order:
+                if box_id not in ['1', '2', '3', '4', '5']:
+                    raise ValueError
+            
+        except:
+            print("box id should be in 1~5")
+    
+    elif task_type == 'clustering':
+        try:
+            box_order = '12345'
+            region_list = input("enter the list of regions(red/blue) to cluster 5 boxes: [combination of [r, b] 5 times in total]\n")
+
+            if len(region_list) != 5:
+                raise ValueError
+            
+            for region in region_list:
+                if region not in ['r', 'b']:
+                    raise ValueError
+            color_to_id = {'b': '2', 'r': '3'}
+            # region_id_list = []
+            # for region_color in region_list:
+            #     region_id_list.append(color_to_id[region_color])
+            region_id_list = "".join([color_to_id[region_color] for region_color in region_list])
+            
+        except:
+            print("region should be 'r' or 'b'")
+
+    print('given goal task is:', f'{task_type}_5_B{box_order}_R{region_list}')
+    goal_task = f'{task_type}_5_B{box_order}_R{region_id_list}'
 
     TaskPlanner = PlannerService(args, goal_task)
+
+    print('planner server started!')
+    print('waiting state input from sim...')
     rospy.spin()
