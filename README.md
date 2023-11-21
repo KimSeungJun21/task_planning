@@ -5,8 +5,26 @@
 
 ```xhost +```
 
+# Docker build
+```sudo docker build --tag gtp_env .```
 
-```sudo docker build --tag nvidia_ros:latest .```
+```sudo docker run --privileged --name gtp01 -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v ~/task_planning:/workspace --gpus all gtp_env:latest /bin/bash```
+
+# ROS package build
+```cd workspace/gtp_ws```
+```catkin_make```
+```source devel/setup.bash```
+
+# Run Roscore
+```roscore```
+
+# Run task planner server
+```cd src/graph_task_planning/src```
+```python plan_inference.py```
+
+# Run pybullet simulator
+```cd src/gtp_pybullet/src```
+```python sim_env.py```
 
 # Installing nvidia-container-toolkit 
 ```sudo apt install curl```
