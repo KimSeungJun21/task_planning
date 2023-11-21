@@ -66,7 +66,7 @@ cd src/gtp_pybullet/src
 python sim_env.py
 ```
 Now you can see the initial state with 5 boxes randomly located on the white region.
-To observe and send graph-based state to task planner, you need to input [enter] in this terminal when ```request plan...``` message is on it.
+To observe graph-based state and send it to task planner, you need to input [enter] in this terminal when ```request plan...``` message is on it.
 
 ## Issue
 gpus issue: <https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0>
