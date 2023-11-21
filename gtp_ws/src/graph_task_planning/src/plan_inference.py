@@ -160,7 +160,8 @@ if __name__ == '__main__':
     
     if task_type == 'stacking':
         try:
-            region_list = '1'
+            region_list = 'w'
+            region_id_list = '1'
             box_order = input("enter the order of boxes to stack: [permutation of 1~5]\n")
             
             if len(box_order) != 5:
@@ -197,6 +198,7 @@ if __name__ == '__main__':
     goal_task = f'{task_type}_5_B{box_order}_R{region_id_list}'
 
     TaskPlanner = PlannerService(args, goal_task)
+
 
     print('planner server started!')
     print('waiting state input from sim...')
