@@ -1,0 +1,27 @@
+,rel_on_right,rel_on_left,rel_grasp_right,rel_grasp_left
+"('Box1', 'Box3')",0,0,0,0
+"('Box1', 'Region_1')",0,0,0,0
+"('Box1', 'Robot_hand')",0,0,0,1
+"('Box2', 'Box4')",0,1,0,0
+"('Box2', 'Box5')",1,0,0,0
+"('Box2', 'Region_1')",0,0,0,0
+"('Box2', 'Robot_hand')",0,0,0,0
+"('Box3', 'Box1')",0,0,0,0
+"('Box3', 'Box4')",1,0,0,0
+"('Box3', 'Region_1')",0,0,0,0
+"('Box3', 'Robot_hand')",0,0,0,0
+"('Box4', 'Box2')",1,0,0,0
+"('Box4', 'Box3')",0,1,0,0
+"('Box4', 'Region_1')",0,0,0,0
+"('Box4', 'Robot_hand')",0,0,0,0
+"('Box5', 'Box2')",0,1,0,0
+"('Box5', 'Region_1')",1,0,0,0
+"('Region_1', 'Box1')",0,0,0,0
+"('Region_1', 'Box2')",0,0,0,0
+"('Region_1', 'Box3')",0,0,0,0
+"('Region_1', 'Box4')",0,0,0,0
+"('Region_1', 'Box5')",0,1,0,0
+"('Robot_hand', 'Box1')",0,0,1,0
+"('Robot_hand', 'Box2')",0,0,0,0
+"('Robot_hand', 'Box3')",0,0,0,0
+"('Robot_hand', 'Box4')",0,0,0,0

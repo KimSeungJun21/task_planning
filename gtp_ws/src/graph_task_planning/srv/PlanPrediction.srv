@@ -1,0 +1,5 @@
+std_msgs/Float64MultiArray node_feature
+std_msgs/Float64MultiArray edge_index
+std_msgs/Float64MultiArray edge_attr
+---
+Plan_msg pred_plan
