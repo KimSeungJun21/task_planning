@@ -1,9 +1,11 @@
 # task_planning
-```git clone -b master https://github.com/KimSeungJun21/task_planning.git``` 
+```
+git clone -b master https://github.com/KimSeungJun21/task_planning.git
 
-```cd task_planning```
+cd task_planning
 
-```xhost +```
+xhost +
+```
 
 # Docker build
 ```sudo docker build --tag gtp_env .```
