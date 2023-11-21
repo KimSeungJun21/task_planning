@@ -41,6 +41,7 @@ source devel/setup.bash
 
 ### 2.Run pretrained task planner server
 ```
+# open new terminal and enter 
 cd src/graph_task_planning/src
 python plan_inference.py
 ```
@@ -52,4 +53,4 @@ python sim_env.py
 ```
 
 ## Issue
-``` gpus issue =>https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0```
+gpus issue: <https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0>
