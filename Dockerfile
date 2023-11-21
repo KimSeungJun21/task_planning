@@ -54,9 +54,9 @@ RUN apt-get install -y libglib2.0-0
 #WORKDIR /workspace
 #RUN mkdir src
 # Set up ROS environment and install rosdep
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
-RUN rosdep install -y --from-paths /workspace/src/
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python"
+#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && rosdep update && rosdep install --from-paths /workspace/src --ignore-src -y"
+#RUN rosdep install -y --from-paths /workspace/src/
+#RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python"
 #RUN rosdep install -y --from-paths /workspace/src/
 #RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3"
 
