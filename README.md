@@ -1,4 +1,4 @@
-# Graph-based Task Planner(GTP)
+# Graph-based Task Planner (GTP)
 
 ![Screenshot from 2023-11-21 11-04-13](https://github.com/KimSeungJun21/task_planning/assets/120440095/a8bcfa5b-53f2-4099-adad-073eb090162b)
 
@@ -25,7 +25,8 @@ cd task_planning
 sudo docker build --tag gtp_env .
 sudo docker run --privileged --name gtp01 -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v ~/task_planning:/workspace --gpus all gtp_env:latest /bin/bash
 ```
-home에 task_planning file이 있는 상태, 만약 다른 폴더에서 실행하는경우, ~/(path)/task_planning으로 경로변경을 해주어야된다.
+
+If you already have task_planning file in home, you should replace the repository to '~/(path)/task_planning'.
 
 ## ROS setup
 ### Build packages
@@ -36,16 +37,18 @@ source devel/setup.bash
 ```
 
 ## Run with pretrained model
-### 1.Run Roscore
-```roscore```
+### 1. Run Roscore
+```
+roscore
+```
 
-### 2.Run pretrained task planner server
-#### enter to docker env in new terminal
+### 2. Run pretrained task planner server
+#### Enter to docker env in new terminal
 ```
 docker exec -it gtp01 bash
 ```
 
-#### source ros workspace and run pretrained task planner
+#### Source ros workspace and run pretrained task planner
 ```
 cd ~/workspace/gtp_ws
 source devel/setup.bash
@@ -53,12 +56,12 @@ cd src/graph_task_planning/src
 python plan_inference.py
 ```
 
-### 3.Run pybullet simulator
-#### enter to docker env in new terminal 
+### 3. Run pybullet simulator
+#### Enter to docker env in new terminal 
 ```
 docker exec -it gtp01 bash
 ```
-#### source ros workspace and run pretrained task planner
+#### Source ros workspace and run pretrained task planner
 ```
 cd ~/workspace/gtp_ws
 source devel/setup.bash
