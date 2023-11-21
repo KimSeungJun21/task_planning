@@ -24,6 +24,7 @@ cd task_planning
 ```
 sudo docker build --tag gtp_env .
 sudo docker run --privileged --name gtp01 -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v ~/task_planning:/workspace --gpus all gtp_env:latest /bin/bash
+#home에 task_planning file이 있는 상태, 만약 다른 폴더에서 실행하는경우, ~/(path)/task_planning으로 경로변경을 해주어야된다.
 ```
 
 ## ROS setup
@@ -50,24 +51,5 @@ cd src/gtp_pybullet/src
 python sim_env.py
 ```
 
-
-
-
-# home에 task_planning file이 있는 상태, 만약 다른 폴더에서 실행하는경우, ~/path/task_planning으로 경로변경을 해주어야된다.
-
-```
-sudo docker run --name ros -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v ~/task_planning:/workspace --gpus all nvidia_ros /bin/bash
-cd test_pybullet
-```
-
-If you want to run examples:
-
-1) Stacking example
-  
-```python3 stacking.py```
-
-2) Clustering example
-
-```python3 clustering.py```
-
+## Issue
 ``` gpus issue =>https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0```
