@@ -78,7 +78,7 @@ cd src/gtp_pybullet/src
 python sim_env.py
 ```
 Now you can see the initial state with 5 boxes randomly located on the white region.
-The simulation node will observe graph-based state and send it to task planner sequentially untill the current state is reach the goal state.
+The simulation node will observe graph-based state and send it to task planner sequentially until the current state is reach the goal state.
 
 ## Running Example
 
