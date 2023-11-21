@@ -55,6 +55,15 @@ source devel/setup.bash
 cd src/graph_task_planning/src
 python plan_inference.py
 ```
+You have to give goal conditions to planner. There are 3 conditions: [Task_type, box_order, region_list]
+
+  **task_type**: the task type to plan ['stacking', 'clustering']
+  
+  **box_order**: the order of boxes to stack(only for stacking): [permutation of 1~5]
+  
+  **region_list**: the list of regions(red/blue) to cluster 5 boxes(only for clustering): [combination of [r, b] 5 times in total]
+
+After setting goal conditions, the planner server will be started and wait the state input from simulation node.
 
 ### 3. Run pybullet simulator
 #### Enter to docker env in new terminal 
@@ -69,7 +78,6 @@ cd src/gtp_pybullet/src
 python sim_env.py
 ```
 Now you can see the initial state with 5 boxes randomly located on the white region.
-To observe graph-based state and send it to task planner, you need to input [enter] in this terminal when ```request plan...``` message is on it.
-
+The simulation node will observe graph-based state and send it to task planner sequentially untill the current state is reach the goal state.
 ## Issue
 gpus issue: <https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0>
