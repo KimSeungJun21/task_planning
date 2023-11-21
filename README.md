@@ -16,14 +16,19 @@
 ```source devel/setup.bash```
 # Run
 ```**Run Roscore**```
+
 ```roscore```
 
 ```**Run task planner server**```
+
 ```cd src/graph_task_planning/src```
+
 ```python plan_inference.py```
 
 ```**Run pybullet simulator**```
+
 ```cd src/gtp_pybullet/src```
+
 ```python sim_env.py```
 
 ```Installing nvidia-container-toolkit```
