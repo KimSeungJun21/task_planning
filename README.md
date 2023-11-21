@@ -79,5 +79,12 @@ python sim_env.py
 ```
 Now you can see the initial state with 5 boxes randomly located on the white region.
 The simulation node will observe graph-based state and send it to task planner sequentially untill the current state is reach the goal state.
+
+## Running Example
+
+| Stacking  | Clustering |
+| ------------- | ------------- |
+| ![Screenshot from 2023-11-21 13-21-46](https://github.com/KimSeungJun21/task_planning/assets/120440095/1a377e01-adca-445d-88dd-626b28e37ec9) | ![Screenshot from 2023-11-21 13-56-59](https://github.com/KimSeungJun21/task_planning/assets/120440095/968cf5d2-6758-48ad-92d6-efddabe6bc7f)|
+
 ## Issue
 gpus issue: <https://velog.io/@johyonghoon/docker-Error-response-from-daemon-could-not-select-device-driver-with-capabilities-gpu-%ED%95%B4%EA%B2%B0>
