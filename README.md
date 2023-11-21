@@ -15,23 +15,23 @@
 ```catkin_make```
 ```source devel/setup.bash```
 # Run
-```**Run Roscore**```
+## 1.Run Roscore
 
 ```roscore```
 
-```**Run task planner server**```
+## 2.Run task planner server
 
 ```cd src/graph_task_planning/src```
 
 ```python plan_inference.py```
 
-```**Run pybullet simulator**```
+## 3.Run pybullet simulator
 
 ```cd src/gtp_pybullet/src```
 
 ```python sim_env.py```
 
-```Installing nvidia-container-toolkit```
+# Installing nvidia-container-toolkit
 ```sudo apt install curl```
 
 ```distribution=$(. /etc/os-release;echo $ID$VERSION_ID)    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list```
