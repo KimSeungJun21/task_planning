@@ -200,6 +200,7 @@ if __name__ == '__main__':
     TaskPlanner = PlannerService(args, goal_task)
 
 
+
     print('planner server started!')
     print('waiting state input from sim...')
     rospy.spin()
